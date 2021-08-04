@@ -52,12 +52,12 @@ const TemplateWrapper = (props) => {
                 },
                 {
                   name: "og:image",
-                  content: "https://btholt.github.io" + jpg,
+                  content: "https://frontendmasters.learnwithjason.dev" + jpg,
                 },
                 {
                   name: "og:url",
                   content:
-                    "https://btholt.github.io/complete-intro-to-react-v6" +
+                    "https://frontendmasters.learnwithjason.dev" +
                     (frontmatter && frontmatter.path ? frontmatter.path : ""),
                 },
                 {
