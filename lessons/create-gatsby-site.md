@@ -2,7 +2,7 @@
 path: "/create-gatsby-site"
 title: "Create a New Gatsby Site"
 order: "2A"
-section: "Get Started"
+section: "Gatsby Basics"
 description: "TKTK"
 ---
 

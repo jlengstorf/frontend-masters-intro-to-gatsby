@@ -2,7 +2,7 @@
 path: "/create-page"
 title: "Create a Page"
 order: "2B"
-section: "Get Started"
+section: "Gatsby Basics"
 description: "TKTK"
 ---
 

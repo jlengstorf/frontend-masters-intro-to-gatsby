@@ -2,7 +2,7 @@
 path: "/create-link"
 title: "Create a Link"
 order: "2C"
-section: "Get Started"
+section: "Gatsby Basics"
 description: "TKTK"
 ---
 

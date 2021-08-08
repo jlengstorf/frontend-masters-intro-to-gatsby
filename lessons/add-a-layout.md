@@ -1,7 +1,7 @@
 ---
 path: "/add-layout"
 title: "Add a Layout"
-order: "3A"
+order: "4A"
 section: "Make Gatsby Look Nice"
 description: "TKTK"
 ---
@@ -12,7 +12,7 @@ TKTK
 import * as React from "react";
 import { Link } from "gatsby";
 
-export function Layout({ children }) {
+export default function Layout({ children }) {
   return (
     <>
       <header>

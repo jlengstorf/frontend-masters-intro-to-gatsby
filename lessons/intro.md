@@ -8,6 +8,12 @@ description: "Get to know the Intro to Gatsby v3 course and your instructor, Jas
 
 TODO: write this intro
 
+## Prerequisites
+
+- Node 14+ (this workshop uses Node v16.6.1)
+- a GitHub account (we'll use this to make the source code accesible for deployment)
+- a Netlify account (we'll use this to deploy the site from GitHub)
+
 ## Who is this course for
 
 ## Where to File Issues
