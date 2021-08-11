@@ -6,8 +6,9 @@ section: "Gatsby Image Handling & Optimization"
 description: "TKTK"
 ---
 
+To query images from GraphQL in MDX, it turns out you can use almost the exact same code from a page component.
 
-`src/posts/another-blog.mdx`:
+Let's give it a try by querying for an image in `src/posts/another-blog.mdx`:
 
 ```diff
   ---

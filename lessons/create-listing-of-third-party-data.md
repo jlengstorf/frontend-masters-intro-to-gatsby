@@ -6,16 +6,19 @@ section: "Use Third-Party Data"
 description: "TKTK"
 ---
 
-`src/pages/index.js`:
+To make the Sanity data easier to browse, let's add a listing of the last 20 episodes to the home page.
+
+Make the following updates to `src/pages/index.js`:
 
 ```diff
   import * as React from 'react';
   import { Link, useStaticQuery, graphql } from 'gatsby';
   import { StaticImage } from 'gatsby-plugin-image';
-  import Layout from '../components/layout';
+  import Layout from '../components/layout.js';
+
   import { imageWrapper } from '../styles/index.module.css';
 
-  export default function IndexPage(props) {
+  export default function IndexPage() {
     const data = useStaticQuery(graphql`
       query GetBlogPosts {
         allMdx(sort: { order: DESC, fields: frontmatter___date }, limit: 10) {
@@ -32,8 +35,10 @@ description: "TKTK"
 +       allSanityEpisode(
 +         sort: { fields: date, order: DESC }
 +         filter: { youtubeID: { ne: null } }
++         limit: 20
 +       ) {
 +         nodes {
++           id
 +           title
 +           guest {
 +             name
@@ -58,9 +63,11 @@ description: "TKTK"
             height={300}
           />
         </div>
-        <h1>Hello Frontend Masters</h1>
+
+        <h1>Hello Frontend Masters!</h1>
         <Link to="/about">About this site</Link>
-        <p>Check out my most recent blog posts.</p>
+
+        <h2>Check out my recent blog posts</h2>
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
@@ -69,18 +76,22 @@ description: "TKTK"
             </li>
           ))}
         </ul>
++
 +       <h2>
-+         Episodes of <em>Learn With Jason</em>
++         Latest episodes of <em>Learn With Jason</em>
 +       </h2>
 +       <ul>
 +         {episodes.map((episode) => (
-+           <li key={episode.gatsbyPath}>
++           <li key={episode.id}>
 +             <Link to={episode.gatsbyPath}>
 +               {episode.title} (with {episode.guest?.[0]?.name})
 +             </Link>
 +           </li>
 +         ))}
 +       </ul>
++       <a href="https://www.learnwithjason.dev/">
++         Watch all episodes of <em>Learn With Jason</em>
++       </a>
       </Layout>
     );
   }

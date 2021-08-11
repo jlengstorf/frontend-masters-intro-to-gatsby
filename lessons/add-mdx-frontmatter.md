@@ -6,7 +6,11 @@ section: "Build a Gatsby Blog"
 description: "TKTK"
 ---
 
-TKTK
+Blog posts require more than content, though – we also need to add metadata like the post date and SEO tag values.
+
+To do that, we can take advantage of _frontmatter_, which is a special part of Markdown and MDX files that adds additional data that won't be displayed on the page.
+
+For each post, let's add a date, title, and description.
 
 `src/posts/first-blog.mdx`:
 
@@ -35,3 +39,7 @@ TKTK
 
   This blog is even better than the last one.
 ```
+
+But wait — after saving the frontmatter, our title and description aren't being added to the page title. Looks like we need to make a change so our SEO component can use the MDX frontmatter.
+
+We'll do that in the next section.

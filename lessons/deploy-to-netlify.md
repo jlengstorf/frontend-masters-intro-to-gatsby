@@ -16,7 +16,7 @@ Make sure you're using the latest version of the CLI (at the time of this worksh
 
 ```bash
 ntl --version
-# example output => netlify-cli/6.0.8 darwin-x64 node-v16.6.1
+# example output => netlify-cli/6.1.0 darwin-x64 node-v16.6.1
 
 # log into your Netlify account
 ntl login
@@ -28,8 +28,9 @@ ntl init
 > Note: `ntl` is a shorthand command. You can also use `netlify` (e.g. `netlify --version`) if you prefer.
 
 The CLI asks a few questions:
+
 1. Choose "Create & configure a new
- site"
+   site"
 2. Choose the Netlify account you want to deploy the site to
 3. The rest of the prompts can use the defaults
 
@@ -52,7 +53,7 @@ tsby build
 ? Directory to deploy (blank for current dir): public
 ? Netlify functions folder: netlify/functions
 ? Seems like this is a Gatsby site.
-❇️  We're going to install this Build Plugin: Essential 
+❇️  We're going to install this Build Plugin: Essential
 Gatsby plugin
 ➡️  OK to install? Yes
 Adding deploy key to repository...
@@ -72,5 +73,3 @@ Next steps:
 ```
 
 > Note: Netlify automatically detects that this is a Gatsby site and includes a [build plugin](https://ntl.fyi/build-plugins) to enable enhancements like build speed improvements, support for serverless functions, and more.
-
-

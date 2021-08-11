@@ -6,14 +6,14 @@ section: "SEO & Sharing in Gatsby"
 description: "TKTK"
 ---
 
-TKTK
+For convenience, creating an `<Seo>` component makes it easier to update all the different meta tags and other information required for sharing a page on various social sites.
 
-`src/components/seo.js`:
+To do that, create a new file at `src/components/seo.js` and add the following:
 
 ```jsx
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 export function Seo(props) {
   const data = useStaticQuery(graphql`
@@ -58,20 +58,16 @@ export function Seo(props) {
 }
 ```
 
-`src/components/layout.js`:
+## Use the SEO component with no configuration
+
+To use the component, import it into `src/pages/index.js`:
 
 ```diff
   import * as React from 'react';
   import { Link, useStaticQuery, graphql } from 'gatsby';
 + import { Seo } from '../components/seo.js';
 
-  export default function Layout({
-    children,
-+   title = false,
-+   description = false,
-+   image = false,
-+   path = false,
-  }) {
+  export default function IndexPage() {
     const data = useStaticQuery(graphql`
       query GetSiteTitle {
         site {
@@ -86,15 +82,42 @@ export function Seo(props) {
 
     return (
       <>
-+       <Seo title={title} description={description} image={image} path={path} />
++       <Seo />
         <header>
           <Link to="/">{meta.title}</Link>
-          <nav>
-            <Link to="/about">About</Link>
-          </nav>
         </header>
-        <main>{children}</main>
+        <main>
+          <h1>Hello Frontend Masters!</h1>
+          <Link to="/about">About this site</Link>
+        </main>
       </>
+    );
+  }
+```
+
+## Use the SEO component with configuration
+
+On pages that shouldn't use the default metadata, we can pass in custom values for the title, description, image, and path.
+
+Let's update the About page (`src/pages/about.js`) to use the SEO component with custom values:
+
+```diff
+  import * as React from 'react';
+  import { Link } from 'gatsby';
++ import { Seo } from '../components/seo.js';
+
+  export default function AboutPage() {
+    return (
++     <>
++       <Seo
++         title="About This Site"
++         description="More information about this site."
++       />
+        <main>
+          <h1>About This Site</h1>
+          <Link to="/">Back to home</Link>
+        </main>
++     </>
     );
   }
 ```

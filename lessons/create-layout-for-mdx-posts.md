@@ -1,18 +1,19 @@
 ---
 path: "/create-layout-for-mdx-posts"
 title: "Create a Layout for MDX Posts"
-order: "5C"
+order: "5D"
 section: "Build a Gatsby Blog"
 description: "TKTK"
 ---
 
-TKTK
+In an MDX file, we can't add props to the layout component. That means we need a bit of special handling for MDX posts to make sure the title and description make it through to the layout.
 
-`src/components/post-layout.js`:
+Create a new component at `src/components/post-layout.js` with the following code:
 
 ```jsx
-import * as React from 'react';
-import Layout from './layout.js';
+import * as React from "react";
+import { Link } from "gatsby";
+import Layout from "./layout.js";
 
 export default function PostLayout({ children, pageContext }) {
   const { title, description } = pageContext.frontmatter;
@@ -26,7 +27,9 @@ export default function PostLayout({ children, pageContext }) {
 }
 ```
 
-`gatsby-config.js`:
+## Use the post layout for MDX files
+
+To use the new MDX layout, we need to swap it in our `gatsby-config.js`:
 
 ```diff
   module.exports = {
@@ -64,3 +67,5 @@ export default function PostLayout({ children, pageContext }) {
     ],
   };
 ```
+
+Now our posts show the correct title and description in the `<head>`!

@@ -6,20 +6,25 @@ section: "Gatsby Basics"
 description: "TKTK"
 ---
 
-Next up, create a second page called `src/about.js` and add the following code:
+Gatsby provides a `<Link>` component that enables performant links between pages. The primary benefits are:
 
-```jsx
-import * as React from "react";
-import { Link } from "gatsby";
+- **No page reloads** — clicking a link loads the new page without requiring a full page refresh. This gives the site a more app-like feel.
+- **Preloading content** — Gatsby will prefetch page content when the user hovers over a link. This speeds up navigation and makes for a better overall experience.
 
-export default function AboutPage() {
-  return (
-    <main>
-      <h1>About This Site</h1>
-      <Link to="/">Back to home</Link>
-    </main>
-  );
-}
+To add this, import the `Link` component from `gatsby`:
+
+```diff
+  import * as React from "react";
++ import { Link } from "gatsby";
+
+  export default function AboutPage() {
+    return (
+      <main>
+        <h1>About This Site</h1>
++       <Link to="/">Back to home</Link>
+      </main>
+    );
+  }
 ```
 
 Visit `http://localhost:8000/about/` and you should see the following:

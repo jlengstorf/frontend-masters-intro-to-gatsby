@@ -6,11 +6,19 @@ section: "Use Third-Party Data"
 description: "TKTK"
 ---
 
+Where Gatsby _really_ starts to shine is when we dig into its third-party plugins. For example, there are a large number of headless CMSs out there, and many of them have a Gatsby source plugin available.
+
+One such headless CMS is [Sanity](https://www.sanity.io/). For this workshop, we'll use the [_Learn With Jason_](https://www.learnwithjason.dev) Sanity instance to pull in episode data.
+
+To start, let's install the Sanity source plugin:
+
 ```bash
 npm install gatsby-source-sanity
 ```
 
-For this workshop, we'll use the [_Learn With Jason_](https://www.learnwithjason.dev) Sanity instance.
+## Configure the Sanity source plugin in Gatsby
+
+To use the source plugin, make the following changes to `gatsby-config.js`:
 
 ```diff
   module.exports = {
@@ -73,3 +81,5 @@ For this workshop, we'll use the [_Learn With Jason_](https://www.learnwithjason
     ],
   };
 ```
+
+After restarting the development server, we'll be able to see Sanity data in the GraphQL explorer.

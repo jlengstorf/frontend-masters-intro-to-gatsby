@@ -6,14 +6,16 @@ section: "Gatsby Basics"
 description: "TKTK"
 ---
 
-TKTK
+Most data access in Gatsby is done using GraphQL. In a lot of cases, we'll know exactly what data we're trying to load, so we can use what's called a "static query" (meaning we don't need any variables) to access it.
+
+Let's load the site metadata we just created into our home page. Make the following edits to `src/pages/index.js`:
 
 ```diff
   import * as React from 'react';
 - import { Link } from 'gatsby';
 + import { Link, useStaticQuery, graphql } from 'gatsby';
 
-  export default function Layout({ children }) {
+  export default function IndexPage() {
 +   const data = useStaticQuery(graphql`
 +     query GetSiteTitle {
 +       site {
@@ -23,20 +25,19 @@ TKTK
 +       }
 +     }
 +   `);
-+ 
++
 +   const meta = data?.site?.siteMetadata ?? {};
-+ 
++
     return (
-      <>
-        <header>
--         <Link to="/">Intro to Gatsby</Link>
++     <>
++       <header>
 +         <Link to="/">{meta.title}</Link>
-          <nav>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        <main>{children}</main>
-      </>
++       </header>
+        <main>
+          <h1>Hello Frontend Masters!</h1>
+          <Link to="/about">About this site</Link>
+        </main>
++     </>
     );
   }
 ```

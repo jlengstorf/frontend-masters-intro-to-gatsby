@@ -6,8 +6,11 @@ section: "Gatsby Image Handling & Optimization"
 description: "TKTK"
 ---
 
+Images can also be queried from GraphQL in Gatsby. In this workshop we'll use a contrived example, but as the complexity of your site grows, it often becomes necessary to use this approach because the images can't be hard-coded into the site — for example, when they're coming from an API.
 
-`src/pages/about.js`:
+Gatsby uses a special component called `GatsbyImage` to handle these, and it accepts a special data object that includes all the details about the image, placeholders, dimensions, and everything else it needs to render an optimized image.
+
+Let's give this a try by querying for one of our images in `src/pages/about.js`:
 
 ```diff
   import * as React from 'react';

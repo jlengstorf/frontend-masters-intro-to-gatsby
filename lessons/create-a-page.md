@@ -6,28 +6,22 @@ section: "Gatsby Basics"
 description: "TKTK"
 ---
 
-To start, let's remove the default page and create a simple page.
+Gatsby will create a page for every file in your site's `pages` directory. The slugs for these pages will be the name of the file (e.g. `about.md` will become `/about`).
 
-Open `src/pages/index.js` and replace its contents with the following:
+Let's see this in action! Create a new file at `src/pages/about.js` and add the following:
 
 ```jsx
 import * as React from "react";
 
-export default function IndexPage() {
+export default function AboutPage() {
   return (
     <main>
-      <h1>Hello Frontend Masters</h1>
+      <h1>About This Site</h1>
     </main>
   );
 }
 ```
 
-Save the page, then start the project using Netlify Dev:
+Save the page. Gatsby will automatically create a page at `/about` without requiring a restart.
 
-```bash
-npm run develop
-```
-
-This will start the Gatsby site at `http://localhost:8000`. Any changes will be hot-reloaded.
-
-![First Gatsby page](./images/first-page.png)
+Visit `http://localhost:8000/about` to see the new page.

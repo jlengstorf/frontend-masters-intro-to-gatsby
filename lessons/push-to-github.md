@@ -6,26 +6,16 @@ section: "Deploy a Gatsby Site"
 description: "TKTK"
 ---
 
-If you don't already have it, the [GitHub CLI](https://cli.github.com/) makes this *much* easier. This is optional, but this is what we'll use in the workshop.
+Now that our site is built, we're ready to share it with the world!
+
+Make sure all your changes are committed, then push them to your GitHub repo.
 
 ```bash
-brew install gh
-```
-
-> For Windows or non-Homebrew solutions for macOS/Linux, see [the installation instructions](https://github.com/cli/cli#installation)
-
-```bash
-# if necessary, initialize the repo
-git init
-
-# create the repo on your GitHub account
-gh repo create
-
-# add all the files
+# make sure all the files are tracked
 git add -A
 
 # commit the files
-git commit -m 'feat: site ready to deploy'
+git commit -m 'site ready to deploy'
 
 # push the files to GitHub
 git push origin main
