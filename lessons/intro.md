@@ -6,7 +6,7 @@ section: "Welcome"
 description: "Get to know the Intro to Gatsby v3 course and your instructor, Jason Lengstorf!"
 ---
 
-TODO: write this intro
+Gatsby is a flexible, open-source site generator for React. In this course, we'll take our first steps with Gatsby and learn how to build custom sites from scratch.
 
 ## Prerequisites
 
